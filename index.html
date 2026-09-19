@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>오늘 할 일 · 과목별 체크리스트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>오늘 할 일</h1>
+      <p id="date"></p>
+    </div>
+    <button id="logout" class="secondary hidden">로그아웃</button>
+  </header>
+
+  <section id="auth" class="card auth">
+    <h2>내 체크리스트</h2>
+    <p class="muted">PC와 휴대폰에서 같은 계정으로 로그인하면 내용이 동기화됩니다.</p>
+    <input id="email" type="email" placeholder="이메일">
+    <input id="password" type="password" placeholder="비밀번호">
+    <div class="row">
+      <button id="signup">회원가입</button>
+      <button id="login" class="dark">로그인</button>
+    </div>
+    <p id="authMsg" class="msg"></p>
+  </section>
+
+  <main id="main" class="hidden">
+    <section class="card progress-card">
+      <div class="progress-top"><span>전체 진행률</span><b id="progressText">0 / 0 완료</b></div>
+      <div class="progress"><div id="bar"></div></div>
+    </section>
+    <div id="subjects"></div>
+  </main>
+
+  <footer>과제나 수업 내용이 생길 때마다 해당 과목의 <b>+ 할 일 추가</b>를 눌러 기록하세요.</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
